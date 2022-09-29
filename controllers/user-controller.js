@@ -81,7 +81,7 @@ const userController = {
       .catch(err => res.json(err));
   },
 
-  // /api/users/:userid/fiends/:friendId
+  // /api/users/:userid/friends/:friendId
   addFriend({ params }, res) {
     User.findOneAndUpdate(
       { _id: params.userId },
@@ -98,7 +98,7 @@ const userController = {
       .catch((err) => res.status(400).json(err));
   },
 
-  deleteFriend({ params }, res) {
+  removeFriend({ params }, res) {
     User.findOneAndUpdate(
       { _id: params.userId },
       { $pull: { friends: params.friendId } },
