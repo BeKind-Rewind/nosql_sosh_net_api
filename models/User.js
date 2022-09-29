@@ -9,16 +9,11 @@ const UserSchema = new Schema(
       required: true,
       trim: true
     },
-    createdAt: {
-      type: Date,
-      default: Date.now,
-      get: createdAtVal => dateFormat(createdAtVal)
-    },
     email: {
       type: String,
       unique: true,
       required: true,
-      trim: true
+      match: [/.+@.+\..+/]
     },
     thoughts: [
       {
@@ -43,10 +38,8 @@ const UserSchema = new Schema(
   }
 );
 
-// get total count of thoughts and reactions on retrieval
 UserSchema.virtual('friendCount').get(function () {
-  return this.thoughts.reduce(
-    (total, friends) => total + friends.reactions.length + 1, 0);
+  return this.friends.length;
 });
 
 const User = model('User', UserSchema);

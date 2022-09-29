@@ -1,34 +1,6 @@
 const { Schema, model, Types } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
-const ThoughtSchema = new Schema(
-  {
-    thoughtText: {
-      type: String,
-      required: true
-    },
-    userName: { // not creating new user; the one that  made the post
-      type: String,
-      required: true,
-      trim: true
-    },
-    createdAt: {
-      type: Date,
-      default: Date.now,
-      get: createdAtVal => dateFormat(createdAtVal)
-    }
-    // reactions: [ReactionSchema]
-  },
-  {
-    toJSON: {
-      virtuals: true,
-      getters: true
-    },
-    // prevents virtuals from creating duplicate of _id as `id`
-    id: false
-  }
-);
-
 const ReactionSchema = new Schema(
   {
     reactionId: {
@@ -60,10 +32,40 @@ const ReactionSchema = new Schema(
   }
 );
 
-// get total count of thoughts and reactions on retrieval
+const ThoughtSchema = new Schema(
+  {
+    thoughtText: {
+      type: String,
+      required: true,
+      minlength: 1,
+      maxlength: 280
+    },
+    userName: {
+      type: String,
+      required: true,
+      trim: true
+    },
+    createdAt: {
+      type: Date,
+      default: Date.now,
+      get: createdAtVal => dateFormat(createdAtVal)
+    },
+    reactions: [ReactionSchema]
+  },
+  {
+    toJSON: {
+      virtuals: true,
+      getters: true
+    },
+    // prevents virtuals from creating duplicate of _id as `id`
+    id: false
+  }
+);
+
+
+
 ThoughtSchema.virtual('reactionCount').get(function () {
-  return this.reaction.reduce(
-    (total, reaction) => total + reaction.reactions.length + 1, 0);
+  return this.reactions.length;
 });
 
 const Thought = model('Thought', ThoughtSchema);
