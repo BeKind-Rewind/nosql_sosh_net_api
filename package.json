@@ -20,6 +20,6 @@
   "dependencies": {
     "datejs": "^1.0.0-rc3",
     "mongodb": "^4.10.0",
-    "mongoose": "^6.6.1"
+    "mongoose": "^6.6.2"
   }
 }
