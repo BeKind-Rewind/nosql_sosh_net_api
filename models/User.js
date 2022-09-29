@@ -9,16 +9,11 @@ const UserSchema = new Schema(
       required: true,
       trim: true
     },
-    createdBy: {
-      type: String,
-      required: true,
-      trim: true
+    createdAt: {
+      type: Date,
+      default: Date.now,
+      get: createdAtVal => dateFormat(createdAtVal)
     },
-    // createdAt: {
-    //   type: Date,
-    //   default: Date.now,
-    //   get: createdAtVal => dateFormat(createdAtVal)
-    // },
     email: {
       type: String,
       unique: true,

@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/pushpry',
+  process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/nosql_sosh_net_api',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
