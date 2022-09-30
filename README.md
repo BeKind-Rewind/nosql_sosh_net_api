@@ -1,12 +1,33 @@
 # NoSQL_Sosh_Net_API
 
-# USER STORY
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://choosealicense.com/licenses/mit/)
+
+## Description
+AS A social media startup
+
+## Table of Contents
+  - [USER STORY](#user_story)
+  - [ACCEPTANCE CRIT](#acceptance_crit)
+  - [Models](#models)
+  - [Endpoints](#endpoints)
+  - [Packages](#packages)
+  - [Usage](#usage)
+  - [Tests](#tests)
+  - [Installation](#installation)
+  - [Screenshots and Video](#screenshots_video)
+  - [Contributing](#contributing)
+  - [Questions](#questions)
+
+  - [License](#license)
+      
+
+## USER STORY
 
 AS A social media startup
 I WANT an API for my social network that uses a NoSQL database
 SO THAT my website can handle large amounts of unstructured data
 
-# ACCEPTANCE CRIT
+## ACCEPTANCE CRIT
 
 GIVEN a social network API
 WHEN I enter the command to invoke the application
@@ -50,5 +71,46 @@ Testing restful API calls with Insomnia Core
 
 ## Packages
 - express
-- moment
+- mondoDB
 - mongoose
+- date
+## Usage
+I WANT an API for my social network that uses a NoSQL database
+## Tests
+Testing restful API calls with Insomnia Core: See Endpoints below
+
+## Installation
+npm init -y to intitiate the folder, 
+npm i to download the packages. 
+Additionally, this project uses Express, MongoDB, Mongoose, and Date.js. 
+
+Once set up, run with npm start
+
+## Screenshots and Video
+Video 1: USER GetAll, GetOneById, Create, Update, and Delete
+https://drive.google.com/file/d/1hXp0X0FqiJZynWJn52Ora6j8-kGB4fT7/view
+
+Video 2: THOUGHTS GetAll, GetOneById, Create, Update, and Delete; FRIENDS and REACTIONS Add and Remove
+https://drive.google.com/file/d/1YkOOIjfYx_Hx4M7GIvJqsBfqLWRN3dw9/view
+
+Video 3: REACTIONS Add and Delete
+https://drive.google.com/file/d/163PzM0aPi0kyljlFxDRhb3KR8uzq42RX/view
+
+
+## Questions
+
+Have questions?
+You can find me on GitHub:
+https://github.com/BeKind-Rewind
+
+Or email me at:
+challenge641@gmail.com
+
+
+## License
+
+Licensed under the [MIT](https://choosealicense.com/licenses/mit/) license.
+    
+
+
+
